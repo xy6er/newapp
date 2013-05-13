@@ -1,0 +1,12 @@
+.idea
+*.iml
+*.ipr
+
+# Eclude svn directoories
+.svn
+
+# Eclude target directories
+target
+
+# Eclude log file
+*.log
