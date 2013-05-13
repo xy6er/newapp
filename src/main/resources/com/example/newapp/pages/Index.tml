@@ -1,7 +1,7 @@
 <html t:type="layout" title="Список новостей"
   xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
 
-<!-- <t:grid source="AllNews"/> -->
+    <t:grid source="newsList"/>
 
     <li><t:pagelink page="AddNews">Добавить новость</t:pagelink></li>
 

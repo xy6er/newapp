@@ -1,6 +1,6 @@
 package com.example.newapp.pages;
 
-import com.example.newapp.News;
+import com.example.newapp.entities.News;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.hibernate.Session;
 
@@ -11,11 +11,11 @@ import java.util.List;
  */
 public class Index
 {
-/*    @Inject
+    @Inject
     private Session session;
 
-    public List<News> getAllNews()
+    public List<News> getNewsList()
     {
         return session.createCriteria(News.class).list();
-    }*/
+    }
 }

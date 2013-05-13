@@ -1,6 +1,6 @@
 package com.example.newapp.pages;
 
-import com.example.newapp.News;
+import com.example.newapp.entities.News;
 import org.apache.tapestry5.PersistenceConstants;
 import org.apache.tapestry5.annotations.InjectPage;
 import org.apache.tapestry5.annotations.Persist;
@@ -15,31 +15,25 @@ import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
 
-/**
- * Created with IntelliJ IDEA.
- * User: Aliyah
- * Date: 11.05.13
- * Time: 22:28
- * To change this template use File | Settings | File Templates.
- */
+
 public class AddNews {
 
     @Property
     private News news;
 
-/*    @Inject
-    private Session session;*/
+    @Inject
+    private Session session;
 
     @InjectPage
     private Index index;
 
-/*    @CommitAfter
+    @CommitAfter
     Object onSuccess()
     {
         session.persist(news);
 
         return index;
-    }*/
+    }
 
     @Persist(PersistenceConstants.FLASH)
     @Property

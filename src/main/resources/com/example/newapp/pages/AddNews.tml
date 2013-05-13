@@ -3,7 +3,6 @@
 
     <t:beaneditform submitlabel="message:submit-label" object="news" reorder="title,text,date"/>
 
-
     <p>
         <strong>${message}</strong>
     </p>
