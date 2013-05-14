@@ -3,6 +3,17 @@
 
     <t:grid source="newsList"/>
 
+    <br/>
     <li><t:pagelink page="AddNews">Добавить новость</t:pagelink></li>
+
+    <br/>
+    <t:form>
+        <li><input t:type="TextField" t:id="newsId" validate="required"/></li>
+        <li><input t:id="submitId" t:type="submit"/></li>
+    </t:form>
+
+    <p>
+        <strong>${message}</strong>
+    </p>
 
 </html>

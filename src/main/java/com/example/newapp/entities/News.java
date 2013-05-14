@@ -15,7 +15,7 @@ public class News {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @NonVisual
-    public Long id;
+    public int id;
 
     @Validate("required")
     public String title;
@@ -25,5 +25,11 @@ public class News {
 
     @Validate("required")
     public Date date;
+
+    @Validate("required")
+    public String imageUrl;
+
+    @Validate("required")
+    public String scaledImageUrl;
 
 }

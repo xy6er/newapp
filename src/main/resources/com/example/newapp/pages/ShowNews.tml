@@ -1,0 +1,9 @@
+<html t:type="layout" title="Новости ???"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
+
+    <p>Title: ${news.title}</p>
+    <p>Text: ${news.text}</p>
+    <img src="${news.imageUrl}" alt="ALT TEXT"/>
+    <p>Date: ${news.date}</p>
+
+</html>

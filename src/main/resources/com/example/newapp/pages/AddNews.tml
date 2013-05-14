@@ -1,15 +1,21 @@
 <html t:type="layout" title="Добавить новость"
   xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
 
-    <t:beaneditform submitlabel="message:submit-label" object="news" reorder="title,text,date"/>
+    <t:beaneditform object="news" />
 
     <p>
         <strong>${message}</strong>
     </p>
     <t:form>
+        <input t:type="TextField" t:id="newsTitle" validate="required"/>
+        <br/>
+        <textarea t:type="TextArea" t:id="newsText" validate="required"></textarea>
+        <br/>
+        <input t:type="DateField" t:id="date" validate="required"/>
+        <br/>
         <input t:type="upload" t:id="file" t:value="file" validate="required"/>
         <br/>
-        <input type="submit" value="Upload"/>
+        <input t:id="uploadButton" t:type="submit" value="Upload"/>
     </t:form>
 
 </html>
