@@ -32,4 +32,12 @@ public class News {
     @Validate("required")
     public String scaledImageUrl;
 
+    public News() {
+    }
+
+    public News(String title, String text, Date date) {
+        this.title = title;
+        this.text = text;
+        this.date = date;
+    }
 }

@@ -1,21 +1,32 @@
 <html t:type="layout" title="Добавить новость"
   xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
 
-    <t:beaneditform object="news" />
-
     <p>
         <strong>${message}</strong>
     </p>
     <t:form>
-        <input t:type="TextField" t:id="newsTitle" validate="required"/>
-        <br/>
-        <textarea t:type="TextArea" t:id="newsText" validate="required"></textarea>
-        <br/>
-        <input t:type="DateField" t:id="date" validate="required"/>
-        <br/>
-        <input t:type="upload" t:id="file" t:value="file" validate="required"/>
-        <br/>
-        <input t:id="uploadButton" t:type="submit" value="Upload"/>
+        <table>
+            <tr>
+                <td><label for="newsTitle">Заголовок:</label></td>
+                <td><input size="50" t:type="TextField" t:id="newsTitle" validate="required"/></td>
+            </tr>
+            <tr>
+                <td valign="top"><label for="newsText">Текст новости:</label></td>
+                <td><textarea t:type="TextArea" cols="130" rows="30" t:id="newsText" validate="required"></textarea></td>
+            </tr>
+            <tr>
+                <td><label for="date">Дата и время:</label></td>
+                <td><input t:type="DateField" t:id="date" t:format="dd-MM-yyyy HH:mm:ss" validate="required"/></td>
+            </tr>
+            <tr>
+                <td><label for="file">Изображение:</label></td>
+                <td><input t:type="upload" t:id="file" t:value="file" validate="required"/></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input t:id="saveButton" t:type="submit" value="Сохранить"/></td>
+            </tr>
+        </table>
     </t:form>
 
 </html>

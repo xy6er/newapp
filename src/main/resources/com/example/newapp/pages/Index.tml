@@ -1,19 +1,25 @@
 <html t:type="layout" title="Список новостей"
   xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
 
-    <t:grid source="newsList"/>
-
-    <br/>
-    <li><t:pagelink page="AddNews">Добавить новость</t:pagelink></li>
-
-    <br/>
-    <t:form>
-        <li><input t:type="TextField" t:id="newsId" validate="required"/></li>
-        <li><input t:id="submitId" t:type="submit"/></li>
-    </t:form>
-
-    <p>
-        <strong>${message}</strong>
-    </p>
+    <table>
+        <t:loop source="newsList" value="news">
+            <tr>
+                <td class="imagePost">
+                    <a href="${news.ImageUrl}">
+                        <img src="${news.scaledImageUrl}" alt="alt Text"/>
+                    </a>
+                </td>
+                <td>
+                    <div>
+                        <strong>
+                            <t:pagelink page="ShowNews" context="news">${news.title}</t:pagelink>
+                        </strong>
+                    </div>
+                    <div class="shortPost">${news.text}</div>
+                    <div><t:output value="news.date" format="prop:dateInFormatStr"/></div>
+                </td>
+            </tr>
+        </t:loop>
+    </table>
 
 </html>

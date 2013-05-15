@@ -1,8 +1,16 @@
 package com.example.newapp.pages;
 
 import com.example.newapp.entities.News;
+import org.apache.commons.io.FileUtils;
+import org.apache.tapestry5.annotations.InjectPage;
+import org.apache.tapestry5.annotations.OnEvent;
 import org.apache.tapestry5.annotations.Persist;
 import org.apache.tapestry5.annotations.Property;
+import org.apache.tapestry5.hibernate.annotations.CommitAfter;
+import org.apache.tapestry5.ioc.annotations.Inject;
+import org.hibernate.Session;
+
+import java.io.File;
 
 /**
  * User: xy6er
@@ -12,16 +20,35 @@ import org.apache.tapestry5.annotations.Property;
 
 public class ShowNews {
 
+    @Inject
+    private Session session;
+
+    @InjectPage
+    private Index index;
+
     @Property
     @Persist
     private News news;
 
     @Property
-    @Persist
-    private String text;
+    private String dateInFormatStr = "dd-MM-yyyy HH:mm:ss";
 
-    public void setup(News news) {
+    void onActivate(News news) {
         this.news = news;
-        text = news.text;
+    }
+
+    @CommitAfter
+    @OnEvent(component = "editButton", value = "selected")
+    Object editNews() {
+        return index;
+    }
+
+    @CommitAfter
+    @OnEvent(component = "deleteButton", value = "selected")
+    Object deleteNews() throws Exception{
+        File dir = new File("src/main/webapp/images/news" + news.id);
+        FileUtils.deleteDirectory(dir);
+        session.delete(news);
+        return index;
     }
 }

@@ -21,10 +21,6 @@ import static com.example.newapp.Utils.getImageFormat;
 
 
 public class AddNews {
-
-    @Property
-    private News news;
-
     @Inject
     private Session session;
 
@@ -36,24 +32,26 @@ public class AddNews {
     private String message;
 
     @Property
-    private UploadedFile file;
-
-    @Property
     private String newsTitle;
     @Property
     private String newsText;
     @Property
     private Date date;
+    @Property
+    private UploadedFile file;
 
+
+    void onActivate() { //todo
+        if (date == null) {
+            date = new Date();
+        }
+    }
 
     @CommitAfter
-    @OnEvent(component = "uploadButton", value = "selected")
-    Object onSuccessForm() throws Exception
+    @OnEvent(component = "saveButton", value = "selected")
+    Object onSuccessForm()
     {
-        News news = new News();
-        news.title = newsTitle;
-        news.text = newsText;
-        news.date = date;
+        News news = new News(newsTitle, newsText, date);
         session.persist(news);
 
         if(getImageFormat(file.getFileName()) == null) {
@@ -61,23 +59,38 @@ public class AddNews {
             return null;
         }
 
-        File dir = new File("src/main/webapp/images/news" + news.id);
-        dir.mkdir();
-
-        File imageFile = new File(dir.getPath() + "/" + file.getFileName());
-        file.write(imageFile);
-        news.imageUrl = "images/news" + news.id + "/" + imageFile.getName();
-        BufferedImage image = ImageIO.read(imageFile);
-
-        if(image.getWidth() > 200 || image.getHeight() > 200) {
-            BufferedImage scaledImage = Scalr.resize(image, 150);
-            File scaledImageFile = new File(dir.getPath() + "/scaled" + file.getFileName());
-            ImageIO.write(scaledImage, getImageFormat(file.getFileName()), scaledImageFile);
-            news.scaledImageUrl = "images/news" + news.id + "/" + scaledImageFile.getName();
+        if( !uploadAndSaveImage(news) ) {
+            message = "Не удалось загрузить изображение, попробуйте занова";
+            return null;
         }
 
-        message = "Изображение успешно добавлена!";
         return index;
+    }
+
+
+    private boolean uploadAndSaveImage(News news) {
+        try {
+            File dir = new File("src/main/webapp/images/news" + news.id);
+            dir.mkdir();
+
+            File imageFile = new File(dir.getPath() + "/" + file.getFileName());
+            file.write(imageFile);
+            news.imageUrl = "images/news" + news.id + "/" + imageFile.getName();
+            BufferedImage image = ImageIO.read(imageFile);
+
+            int minWidth = 150;
+            if(image.getWidth() > minWidth || image.getHeight() > minWidth) {
+                BufferedImage scaledImage = Scalr.resize(image, minWidth);
+                File scaledImageFile = new File(dir.getPath() + "/scaled" + file.getFileName());
+                ImageIO.write(scaledImage, getImageFormat(file.getFileName()), scaledImageFile);
+                news.scaledImageUrl = "images/news" + news.id + "/" + scaledImageFile.getName();
+            } else {
+                news.scaledImageUrl = news.imageUrl;
+            }
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
     }
 
 }

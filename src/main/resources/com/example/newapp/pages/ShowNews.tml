@@ -1,9 +1,18 @@
-<html t:type="layout" title="Новости ???"
+<html t:type="layout" title="${news.title}"
       xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
-
-    <p>Title: ${news.title}</p>
-    <p>Text: ${news.text}</p>
-    <img src="${news.imageUrl}" alt="ALT TEXT"/>
-    <p>Date: ${news.date}</p>
+    <t:form>
+        <table>
+            <tr><td class="post entry">${news.text}</td></tr>
+            <tr><td align="center"><img src="../${news.ImageUrl}" alt="alt Text"/></td></tr>
+            <tr><td align="center"><t:output value="news.date" format="prop:dateInFormatStr"/></td></tr>
+            <tr><td><br/><br/></td></tr>
+            <tr>
+                <td align="center">
+                    <input t:id="editButton" t:type="submit" value="Редактировать"/>
+                    <input t:id="deleteButton" t:type="submit" value="Удалить"/>
+                </td>
+            </tr>
+        </table>
+    </t:form>
 
 </html>
