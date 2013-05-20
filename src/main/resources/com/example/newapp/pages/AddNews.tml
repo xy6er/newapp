@@ -1,5 +1,5 @@
 <html t:type="layout" title="Добавить новость"
-  xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
 
     <p>
         <strong>${message}</strong>

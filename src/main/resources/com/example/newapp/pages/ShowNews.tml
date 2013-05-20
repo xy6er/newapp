@@ -1,5 +1,6 @@
 <html t:type="layout" title="${news.title}"
       xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
+
     <t:form>
         <table>
             <tr><td class="post entry">${news.text}</td></tr>

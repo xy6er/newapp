@@ -1,4 +1,4 @@
 <html t:type="layout" title="О нас"
-  xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
 
 </html>
