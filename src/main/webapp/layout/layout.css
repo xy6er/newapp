@@ -16,11 +16,17 @@ input {
     border-radius: 6px;
 }
 
-img {
-    border-radius: 6px;
+.button {
+    border: 1px solid #626262;
+    background: transparent;
+    padding: 2px 8px;
+}
+.button:hover {
+    background: grey;
+    padding: 2px 8px;
 }
 
-textarea {
+img, textarea {
     border-radius: 6px;
 }
 
@@ -64,7 +70,7 @@ div.logo {
 }
 div.logo img {
     width: 100px;
-    height: 45px;
+    height: 50px;
 }
 
 div.menu {
@@ -117,13 +123,14 @@ div.menu .current_page_item a {
 /* Page */
 
 div.page {
-    padding: 40px 40px 0 40px;
+    padding: 0px 40px 0 40px;
 }
 
 /* Content */
 
 div.content {
-    margin-right: 70px;
+    margin-top: -40px;
+    margin-right: 50px;
 }
 
 .post {
@@ -191,23 +198,26 @@ div.content {
 
 li.search {
     list-style: none;
+    position: absolute;
+    right: 0.5%;
+    top: 6%;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
 }
 
 li.search input {
-    padding: 0;
     width: 70px;
-    height: 25px;
-    background: #DFDFDF url(images/img02.jpg) repeat-x;
+    height: 24px;
+    border: none;
     font-weight: bold;
+    font-size: 14px;
 }
 
 li.search #search {
-    padding: 5px;
-    width: 150px;
-    height: 25px;
-    background: #FEFEFE url(images/img02.jpg) repeat-x;
+    width: 160px;
+    background: transparent;
+    font-weight: normal;
+    font-size: 12px;
     border: 1px solid #626262;
-    font: normal 1em Arial, Helvetica, sans-serif;
 }
 
 /* Footer */

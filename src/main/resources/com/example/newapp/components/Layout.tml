@@ -18,19 +18,10 @@
                     <td>
                         <div class="logo">
                             <t:pagelink page="index">
-                                <img src="${context:layout/images/inews-logo.png}" alt="alt Text"/>
+                                <img src="${context:layout/images/inews-logo.png}" alt="Logo"/>
+                                <img src="${context:layout/images/inews-logo2.png}" alt="iNews"/>
                             </t:pagelink>
                         </div>
-                    </td>
-                    <td>
-                        <form>
-                            <ul>
-                                <li class="search">
-                                    <input type="text" id="search" />
-                                    <input type="submit" value="Поиск" />
-                                </li>
-                            </ul>
-                        </form>
                     </td>
                     <td class="menu">
                         <div class="menu">
@@ -41,6 +32,19 @@
                                 <li><t:pagelink page="Contact">Обратная связь</t:pagelink></li>
                             </ul>
                         </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <form>
+                            <ul>
+                                <li class="search">
+                                    <input type="text" id="search" placeholder="Введите ключевое слово" />
+                                    <input class="button" type="submit" value="Поиск" />
+                                </li>
+                            </ul>
+                        </form>
                     </td>
                 </tr>
             </table>

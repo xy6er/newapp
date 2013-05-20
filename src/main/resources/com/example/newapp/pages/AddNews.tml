@@ -24,7 +24,7 @@
             </tr>
             <tr>
                 <td></td>
-                <td><input t:id="saveButton" t:type="submit" value="Сохранить"/></td>
+                <td><input class="button" t:id="saveButton" t:type="submit" value="Сохранить"/></td>
             </tr>
         </table>
     </t:form>
