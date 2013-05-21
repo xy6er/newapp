@@ -9,7 +9,9 @@
             <tr><td><br/><br/></td></tr>
             <tr>
                 <td align="center">
-                    <input t:id="editButton" t:type="submit" class="button" value="Редактировать"/>
+                    <t:pagelink page="AddNews" context="news">
+                        <input t:type="submit" class="button" value="Редактировать"/>
+                    </t:pagelink>
                     <input t:id="deleteButton" t:type="submit" class="button" value="Удалить"/>
                 </td>
             </tr>

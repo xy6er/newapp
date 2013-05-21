@@ -1,4 +1,4 @@
-<html t:type="layout" title="Добавить новость"
+<html t:type="layout" title="${title}"
       xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
 
     <p>
@@ -16,11 +16,11 @@
             </tr>
             <tr>
                 <td><label for="date">Дата и время:</label></td>
-                <td><input t:type="DateField" t:id="date" t:format="dd-MM-yyyy HH:mm:ss" validate="required"/></td>
+                <td><input t:type="DateField" t:id="date" t:format="dd-MM-yyyy HH:mm:ss" validate="required" /></td>
             </tr>
             <tr>
                 <td><label for="file">Изображение:</label></td>
-                <td><input t:type="upload" t:id="file" t:value="file" validate="required"/></td>
+                <td><input t:type="upload" t:id="file" t:value="file"/></td>
             </tr>
             <tr>
                 <td></td>

@@ -38,12 +38,6 @@ public class ShowNews {
     }
 
     @CommitAfter
-    @OnEvent(component = "editButton", value = "selected")
-    Object editNews() {
-        return index;
-    }
-
-    @CommitAfter
     @OnEvent(component = "deleteButton", value = "selected")
     Object deleteNews() throws Exception{
         File dir = new File("src/main/webapp/images/news" + news.id);

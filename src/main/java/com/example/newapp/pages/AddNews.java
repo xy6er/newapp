@@ -2,10 +2,7 @@ package com.example.newapp.pages;
 
 import com.example.newapp.entities.News;
 import org.apache.tapestry5.PersistenceConstants;
-import org.apache.tapestry5.annotations.InjectPage;
-import org.apache.tapestry5.annotations.OnEvent;
-import org.apache.tapestry5.annotations.Persist;
-import org.apache.tapestry5.annotations.Property;
+import org.apache.tapestry5.annotations.*;
 import org.apache.tapestry5.hibernate.annotations.CommitAfter;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.apache.tapestry5.upload.services.UploadedFile;
@@ -40,28 +37,44 @@ public class AddNews {
     @Property
     private UploadedFile file;
 
+    @Property
+    private String title = "Добавить новость";
 
-    void onActivate() { //todo
-        if (date == null) {
-            date = new Date();
-        }
+    private static News editNews;
+
+    void onActivate() {
+        date = new Date();
+    }
+    void onActivate(News news) {
+        this.editNews = news;
+        newsText = news.text;
+        newsTitle = news.title;
+        date = news.date;
+        title = "Редактироавние новости";
     }
 
     @CommitAfter
     @OnEvent(component = "saveButton", value = "selected")
     Object onSuccessForm()
     {
-        News news = new News(newsTitle, newsText, date);
-        session.persist(news);
-
-        if(getImageFormat(file.getFileName()) == null) {
+        if(file != null && getImageFormat(file.getFileName()) == null) {
             message = "Выберите файл с изображением";
-            return null;
+            return this;
         }
 
-        if( !uploadAndSaveImage(news) ) {
-            message = "Не удалось загрузить изображение, попробуйте занова";
-            return null;
+        if(editNews != null) {
+            editNews.title = newsTitle;
+            editNews.text = newsText;
+            editNews.date = date;
+            if(file != null) {
+                uploadAndSaveImage(editNews);
+            }
+            session.update(editNews);
+            editNews = null;
+        } else {
+            News news = new News(newsTitle, newsText, date);
+            uploadAndSaveImage(news);
+            session.persist(news);
         }
 
         return index;

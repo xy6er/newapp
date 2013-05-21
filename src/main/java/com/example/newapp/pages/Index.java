@@ -4,6 +4,7 @@ import com.example.newapp.entities.News;
 import org.apache.tapestry5.annotations.Property;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.hibernate.Session;
+import org.hibernate.criterion.Order;
 
 import java.util.List;
 
@@ -24,7 +25,7 @@ public class Index
 
     public List<News> getNewsList()
     {
-        return session.createCriteria(News.class).list();
+        return session.createCriteria(News.class).addOrder(Order.desc("date")).list();
     }
 
 }
