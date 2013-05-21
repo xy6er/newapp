@@ -12,95 +12,95 @@
     <body>
 
     <!-- start header -->
-        <div class="header">
-            <table>
-                <tr>
-                    <td>
-                        <div class="logo">
-                            <t:pagelink page="index">
-                                <img src="${context:layout/images/inews-logo.png}" alt="Logo"/>
-                                <img src="${context:layout/images/inews-logo2.png}" alt="iNews"/>
-                            </t:pagelink>
-                        </div>
-                    </td>
-                    <td class="menu">
-                        <div class="menu">
-                            <ul>
-                                <li><t:pagelink page="Index">Новости</t:pagelink></li>
-                                <li><t:pagelink page="AddNews">Добавить новость</t:pagelink></li>
-                                <li><t:pagelink page="About">О нас</t:pagelink></li>
-                                <li><t:pagelink page="Contact">Обратная связь</t:pagelink></li>
-                            </ul>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>
-                        <form>
-                            <ul>
-                                <li class="search">
-                                    <input type="text" id="search" placeholder="Введите ключевое слово" />
-                                    <input class="button" type="submit" value="Поиск" />
-                                </li>
-                            </ul>
-                        </form>
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <!-- end header -->
-        <!-- start page -->
-        <div class="page">
-            <!-- start content -->
-            <div class="content">
-                <div class="post">
-                    <div class="title">
-                        <h1>${title}</h1>
+    <div class="header">
+        <table>
+            <tr>
+                <td>
+                    <div class="logo">
+                        <t:pagelink page="index">
+                            <img src="${context:layout/images/inews-logo.png}" alt="Logo"/>
+                            <img src="${context:layout/images/inews-logo2.png}" alt="iNews"/>
+                        </t:pagelink>
                     </div>
-                    <div class="entry">
-                        <t:body/>
+                </td>
+                <td class="menu">
+                    <div class="menu">
+                        <ul>
+                            <li><t:pagelink page="Index">Новости</t:pagelink></li>
+                            <li><t:pagelink page="AddNews">Добавить новость</t:pagelink></li>
+                            <li><t:pagelink page="About">О нас</t:pagelink></li>
+                            <li><t:pagelink page="Contact">Обратная связь</t:pagelink></li>
+                        </ul>
                     </div>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
                     <t:form>
-                        <div id="slider-wrap">
-                            <div id="slider">
-                                <div class="slide"><img src="${context:advertising/1.jpg}" width="300" height="250"/></div>
-                                <div class="slide"><img src="${context:advertising/2.jpg}" width="300" height="250"/></div>
-                                <div class="slide"><img src="${context:advertising/3.jpg}" width="300" height="250"/></div>
-                                <div class="slide"><img src="${context:advertising/4.jpg}" width="300" height="250"/></div>
-                            </div>
-                        </div>
+                        <ul>
+                            <li class="search">
+                                <input t:value="searchText" t:type="TextField" t:id="searchText" placeholder="Введите ключевое слово" />
+                                <input t:id="searchButton" class="button" t:type="submit" value="Поиск" />
+                            </li>
+                        </ul>
                     </t:form>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <!-- end header -->
+    <!-- start page -->
+    <div class="page">
+        <!-- start content -->
+        <div class="content">
+            <div class="post">
+                <div class="title">
+                    <h1>${title}</h1>
                 </div>
+                <div class="entry">
+                    <t:body/>
+                </div>
+                <t:form>
+                    <div id="slider-wrap">
+                        <div id="slider">
+                            <div class="slide"><img src="${context:advertising/1.jpg}" width="300" height="250"/></div>
+                            <div class="slide"><img src="${context:advertising/2.jpg}" width="300" height="250"/></div>
+                            <div class="slide"><img src="${context:advertising/3.jpg}" width="300" height="250"/></div>
+                            <div class="slide"><img src="${context:advertising/4.jpg}" width="300" height="250"/></div>
+                        </div>
+                    </div>
+                </t:form>
             </div>
-            <!-- end content -->
-            <br style="clear: both;"/>
         </div>
-        <!-- end page -->
-        <!-- start footer -->
-        <div class="footer">
-            <table>
-                <tr>
-                    <td><t:pagelink page="Index">Новости</t:pagelink></td>
-                    <td><t:pagelink page="AddNews">Добавить новость</t:pagelink></td>
-                    <td><t:pagelink page="About">О нас</t:pagelink></td>
-                    <td><t:pagelink page="Contact">Обратная связь</t:pagelink></td>
-                </tr>
-            </table>
-            <p class="legal">
-                &copy;2013 iNews. All Rights Reserved.
-                &nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                Design by
-                <a href="http://www.yandex.ru/">xy6er</a>
-            </p>
-            <div>
-                <div class="yashare-auto-init" data-yashareL10n="ru"
-                     data-yashareType="button" data-yashareQuickServices="yaru,vkontakte,facebook,twitter"></div>
-                <img src="${context:layout/images/hit.gif}" alt="Счетчик"/>
-                <img src="${context:layout/images/counter-1.gif}" alt="Счетчик"/>
-            </div>
+        <!-- end content -->
+        <br style="clear: both;"/>
+    </div>
+    <!-- end page -->
+    <!-- start footer -->
+    <div class="footer">
+        <table>
+            <tr>
+                <td><t:pagelink page="Index">Новости</t:pagelink></td>
+                <td><t:pagelink page="AddNews">Добавить новость</t:pagelink></td>
+                <td><t:pagelink page="About">О нас</t:pagelink></td>
+                <td><t:pagelink page="Contact">Обратная связь</t:pagelink></td>
+            </tr>
+        </table>
+        <p class="legal">
+            &copy;2013 iNews. All Rights Reserved.
+            &nbsp;&nbsp;&bull;&nbsp;&nbsp;
+            Design by
+            <a href="http://www.yandex.ru/">xy6er</a>
+        </p>
+        <div>
+            <div class="yashare-auto-init" data-yashareL10n="ru"
+                 data-yashareType="button" data-yashareQuickServices="yaru,vkontakte,facebook,twitter"></div>
+            <img src="${context:layout/images/hit.gif}" alt="Счетчик"/>
+            <img src="${context:layout/images/counter-1.gif}" alt="Счетчик"/>
+        </div>
 
-        </div>
-        <!-- end footer -->
+    </div>
+    <!-- end footer -->
     </body>
 </html>

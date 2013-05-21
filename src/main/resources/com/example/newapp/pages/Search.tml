@@ -1,4 +1,4 @@
-<html t:type="layout" title="Список новостей"
+<html t:type="layout" title="Результаты поиска"
   xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
 
     <table>

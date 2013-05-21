@@ -212,7 +212,7 @@ li.search input {
     font-size: 14px;
 }
 
-li.search #search {
+li.search #searchText {
     width: 160px;
     background: transparent;
     font-weight: normal;

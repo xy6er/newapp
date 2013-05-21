@@ -4,7 +4,7 @@
     <t:form>
         <table>
             <tr><td class="post entry">${news.text}</td></tr>
-            <tr><td align="center"><img src="../${news.ImageUrl}" alt="alt Text"/></td></tr>
+            <tr><td align="center"><img src="../${news.ImageUrl}" alt="news image"/></td></tr>
             <tr><td align="center"><t:output value="news.date" format="prop:dateInFormatStr"/></td></tr>
             <tr><td><br/><br/></td></tr>
             <tr>
