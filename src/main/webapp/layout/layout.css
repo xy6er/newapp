@@ -85,12 +85,15 @@ div.menu {
 td.menu {
     position: absolute;
     right: 0%;
+
 }
 
-div.menu ul {
-    margin: 0;
-    padding: 0;
+div.menu ul
+{
     list-style: none;
+    margin:0;
+    padding:0;
+    overflow:hidden;
 }
 
 div.menu li {
@@ -99,30 +102,26 @@ div.menu li {
     height: 42px;
 }
 
-div.menu a {
+div.menu a:link, div.menu a:visited
+{
     display: block;
-    padding: 8px 20px 0px 0px;
+    padding: 8px 10px 0px 10px;
     text-decoration: none;
     font-family: Verdana, Arial, Helvetica, sans-serif;
     font-weight: normal;
     font-size: 16px;
     color: #CEC5A4;
+
+    text-align:center;
+    text-decoration:none;
 }
 
-div.menu .last {
-    margin-right: 20px;
+div.menu a:hover, div.menua:active
+{
+    background: #CEC5A4;
+    color: black;
 }
 
-div.menu a:hover {
-    color: #FFFFFF;
-}
-
-div.menu .current_page_item A {
-    text-decoration: underline;
-}
-
-div.menu .current_page_item a {
-}
 
 /* Page */
 
