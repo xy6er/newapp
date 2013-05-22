@@ -18,8 +18,8 @@
                 <td>
                     <div class="logo">
                         <t:pagelink page="index">
-                            <img src="${context:layout/images/inews-logo.png}" alt="Logo"/>
-                            <img src="${context:layout/images/inews-logo2.png}" alt="iNews"/>
+                            <img src="${context:layout/images/inews-logo.png}" id="logo1" alt="Logo"/>
+                            <img src="${context:layout/images/inews-logo2.png}" id="logo2" alt="iNews"/>
                         </t:pagelink>
                     </div>
                 </td>
@@ -27,6 +27,8 @@
                     <div class="menu">
                         <ul>
                             <li><t:pagelink page="Index">Новости</t:pagelink></li>
+                            <li><t:pagelink page="Index">Mac / OS X</t:pagelink></li>
+                            <li><t:pagelink page="Index">iPhone / iPad</t:pagelink></li>
                             <li><t:pagelink page="AddNews">Добавить новость</t:pagelink></li>
                             <li><t:pagelink page="About">О нас</t:pagelink></li>
                             <li><t:pagelink page="Contact">Обратная связь</t:pagelink></li>
@@ -82,6 +84,8 @@
         <table>
             <tr>
                 <td><t:pagelink page="Index">Новости</t:pagelink></td>
+                <td><t:pagelink page="Index">Mac / OS X</t:pagelink></td>
+                <td><t:pagelink page="Index">iPhone / iPad</t:pagelink></td>
                 <td><t:pagelink page="AddNews">Добавить новость</t:pagelink></td>
                 <td><t:pagelink page="About">О нас</t:pagelink></td>
                 <td><t:pagelink page="Contact">Обратная связь</t:pagelink></td>
@@ -99,7 +103,6 @@
             <img src="${context:layout/images/hit.gif}" alt="Счетчик"/>
             <img src="${context:layout/images/counter-1.gif}" alt="Счетчик"/>
         </div>
-
     </div>
     <!-- end footer -->
     </body>
