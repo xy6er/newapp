@@ -1,4 +1,32 @@
 <html t:type="layout" title="Обратная связь"
   xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
 
+    <h3>Наша цель — создать самый удобный веб-сервис для вас.</h3>
+    <br/>
+    <h3>Нам очень важны ваши комментарии, пожелания и заметки об ошибках.</h3>
+    <br/>
+
+    <t:form>
+        <table>
+            <tr>
+                <td><label for="fio">ФИО:</label></td>
+                <td><input size="25" t:type="TextField" t:id="fio" validate="required"/></td>
+            </tr>
+            <tr>
+                <td><label for="email">Email:</label></td>
+                <td><input size="25" t:type="TextField" t:id="email" validate="required"/></td>
+            </tr>
+            <tr>
+                <td valign="top"><label for="text">Текст сообщения:</label></td>
+                <td><textarea t:type="TextArea" cols="60" rows="10" t:id="text" validate="required"></textarea></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input class="button" t:id="addButton" t:type="submit" value="Отправить"/></td>
+            </tr>
+        </table>
+    </t:form>
+
+    <br/>
+    <h2 align="center">${message}</h2>
 </html>
