@@ -200,28 +200,31 @@ div.content {
 
  /* Search */
 
-li.search {
-    list-style: none;
+.search {
+    width: 180px; /* Ширина поля с кнопкой */
+    height: 20px;
     position: absolute;
-    right: 0.5%;
+    right: 1%;
     top: 6%;
     font-family: Verdana, Arial, Helvetica, sans-serif;
-}
-
-li.search input {
-    width: 70px;
-    height: 24px;
-    border: none;
-    font-weight: bold;
-    font-size: 14px;
-}
-
-li.search #searchText {
-    width: 160px;
-    background: transparent;
-    font-weight: normal;
-    font-size: 12px;
+    vertical-align: middle; /* Выравнивание по середине */
     border: 1px solid #626262;
+    border-radius: 6px;
+}
+.search #searchText {
+    border: none; /* Убираем рамку */
+    outline: none; /* Убираем свечение в Chrome и Safari */
+    -webkit-appearance: none; /* Убираем рамку в Chrome и Safari */
+    width: 150px; /* Ширина поля */
+    height: 15px;
+    font-size: 12px;
+    background: transparent;
+}
+.search #searchButton {
+    width: 20px; /* Ширина кнопки */
+    height: 20px;
+    border: none; /* Убираем рамку */
+    background: url(images/search-20.png) no-repeat; /* Параметры фона */
 }
 
 /* Footer */

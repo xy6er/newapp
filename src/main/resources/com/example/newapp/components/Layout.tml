@@ -40,12 +40,10 @@
                 <td></td>
                 <td>
                     <t:form>
-                        <ul>
-                            <li class="search">
-                                <input t:value="searchText" t:type="TextField" t:id="searchText" placeholder="Введите ключевое слово" />
-                                <input t:id="searchButton" class="button" t:type="submit" value="Поиск" />
-                            </li>
-                        </ul>
+                        <div class="search">
+                            <input t:value="searchText" t:type="TextField" t:id="searchText" placeholder="Введите ключевое слово" />
+                            <input t:id="searchButton" t:type="submit" value="" />
+                        </div>
                     </t:form>
                 </td>
             </tr>
