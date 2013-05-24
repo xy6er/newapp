@@ -15,7 +15,7 @@
     <div class="header">
         <table class="table-menu">
             <tr>
-                <td rowspan="2">
+                <td>
                     <div class="logo">
                         <t:pagelink page="index">
                             <img src="${context:layout/images/inews-logo.png}" id="logo1" alt="Logo"/>
@@ -23,7 +23,7 @@
                         </t:pagelink>
                     </div>
                 </td>
-                <td class="menu">
+                <td rowspan="2" class="menu">
                     <div class="menu">
                         <ul>
                             <li><t:pagelink page="Index">Новости</t:pagelink></li>

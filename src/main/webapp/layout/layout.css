@@ -174,10 +174,11 @@ div.menu a:hover, div.menua:active
  /* Search */
 
 .search {
-    width: 190px; /* Ширина поля с кнопкой */
+    width: 185px; /* Ширина поля с кнопкой */
     height: 20px;
     float: right;
-    margin-top: -15px;
+    margin-top: -13px;
+    margin-left: 40px;
     font-family: Verdana, Arial, Helvetica, sans-serif;
     vertical-align: middle; /* Выравнивание по середине */
     border: 1px solid gray;
@@ -188,7 +189,7 @@ div.menu a:hover, div.menua:active
     border: none; /* Убираем рамку */
     outline: none; /* Убираем свечение в Chrome и Safari */
     -webkit-appearance: none; /* Убираем рамку в Chrome и Safari */
-    width: 160px; /* Ширина поля */
+    width: 155px; /* Ширина поля */
     height: 15px;
     font-size: 12px;
     color: black;
