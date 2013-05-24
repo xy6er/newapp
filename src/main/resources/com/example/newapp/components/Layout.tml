@@ -13,9 +13,9 @@
 
     <!-- start header -->
     <div class="header">
-        <table>
+        <table class="table-menu">
             <tr>
-                <td>
+                <td rowspan="2">
                     <div class="logo">
                         <t:pagelink page="index">
                             <img src="${context:layout/images/inews-logo.png}" id="logo1" alt="Logo"/>
@@ -37,7 +37,6 @@
                 </td>
             </tr>
             <tr>
-                <td></td>
                 <td>
                     <t:form>
                         <div class="search">

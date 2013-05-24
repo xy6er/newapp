@@ -1,12 +1,12 @@
 <html t:type="layout" title="Обратная связь"
   xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
 
-    <h3>Наша цель — создать самый удобный веб-сервис для вас.</h3>
     <br/>
+    <h3>Наша цель — создать самый удобный веб-сервис для вас.</h3>
     <h3>Нам очень важны ваши комментарии, пожелания и заметки об ошибках.</h3>
     <br/>
 
-    <t:form>
+    <t:form t:id="form">
         <table>
             <tr>
                 <td><label for="fio">ФИО:</label></td>

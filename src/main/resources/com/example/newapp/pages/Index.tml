@@ -1,10 +1,10 @@
 <html t:type="layout" title="Список новостей"
   xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
 
-    <table>
+    <table class="newsList">
         <t:loop source="newsList" value="news">
             <tr>
-                <td class="imagePost">
+                <td>
                     <a href="${news.ImageUrl}">
                         <img src="${news.scaledImageUrl}" alt="scaled image"/>
                     </a>
